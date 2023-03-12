@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    box-shadow: 0 0 15px rgb(62, 44, 44);    
+}
+
+.visually-hidden {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;  
+    white-space: nowrap;  
+    border: 0;  
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    opacity: 0;
+}
+
+.accordion__title {
+    font-size: 28px; 
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1020px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container:hover .accordion__btn {
+    color: #000000;
+}
+
+.container:hover .accordion__btn:after {
+    content: '\002B'; 
+    font-size: 20px;
+    color: rgb(128, 128, 128);
+    float: right;
+    margin-left: 5px;
+    display: block;
+    margin-left: auto;
+}
+
+.accordion__panel {
+    align-self: center;
+    cursor: pointer;
+    transform: scale(0);
+    margin: 15px;
+    margin-bottom: 0;
+    width: 0;
+    height: 0;
+}
+
+.accordion__btn { 
+  position: relative;
+  display: flex;
+  padding: 10px;
+  font-size: 20px; 
+  font-weight: 700;  
+  background-color: transparent;
+  color: #4d25ed;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  min-height: min-content;
+  text-align: left;
+  border: none;
+  border-top: 1px solid rgb(128, 128, 128);  
+  transition: 0.4s;
+}
+
+.accordion__btn:hover .accordion__panel,
+.accordion__checkbox:checked + .accordion__btn .accordion__panel {
+    transform: scale(1);
+    transition: all 1s ease-out;
+    margin-top: 40px;
+    width: 320px;
+    height: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accordion__btn:hover {
+    color: #000000;
+    flex-direction: column-reverse;
+}
+
+.accordion__checkbox:checked + .accordion__btn {
+    color: #000000;
+    flex-direction: column-reverse;
+}
+
+.accordion__btn:hover.accordion__btn:after {
+    content: '\2718'; 
+    margin-left: auto;
+}
+
+.accordion__checkbox:checked + .accordion__btn:after {
+    content: '\2718';
+    margin-left: auto;
+}
+
+.accordion__checkbox:active + .accordion__panel {    
+    opacity: 0.5;
+}
