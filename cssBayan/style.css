@@ -36,14 +36,13 @@ img {
 
 .container:hover .accordion__btn {
     color: #000000;
+    flex-direction: column-reverse;
 }
 
 .container:hover .accordion__btn:after {
-    content: '\002B'; 
-    font-size: 1.3rem;
+    content: '\002B';
     color: rgb(128, 128, 128);
     float: right;
-    margin-left: 5px;
     display: block;
     margin-left: auto;
 }
@@ -61,6 +60,7 @@ img {
 .accordion__btn { 
   position: relative;
   display: flex;
+  flex-direction: column;
   padding: 10px;   
   font-weight: 700;  
   background-color: transparent;
@@ -108,6 +108,8 @@ img {
 }
 
 .accordion__checkbox:active + .accordion__btn .accordion__panel {    
+    -moz-opacity: 0.5;
+    -webkit-opacity: 0.5;
     opacity: 0.5;
 }
 
